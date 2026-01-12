@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Labia Extrema</title>
+
+<style>
+/* ===============================
+   BASE
+   =============================== */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial Black, Impact, Arial, sans-serif;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* ===============================
+   CELULAR FAKE
+   =============================== */
+.phone {
+  width: 100%;
+  max-width: 390px;
+  height: 780px;
+  border-radius: 40px;
+  background: #000;
+  box-shadow:
+    0 0 0 8px #111,
+    0 25px 60px rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TELA DO CELULAR (FUNDO AQUI) */
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  background: url("https://files.catbox.moe/89la6y.jpg") center / cover no-repeat;
+}
+
+/* DESFOQUE + ESCURECIMENTO */
+.phone-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.85)
+  );
+  z-index: 1;
+}
+
+/* NOTCH */
+.phone-screen::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 22px;
+  background: #000;
+  border-radius: 0 0 14px 14px;
+  z-index: 3;
+}
+
+/* ===============================
+   CONTEÚDO
+   =============================== */
+.container {
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  padding: 60px 20px 30px; /* DIMINUI O TOPO */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* SOBE O CONTEÚDO */
+  text-align: center;
+}
+
+/* LOGO */
+.logo {
+  width: 180px;
+  margin-bottom: 16px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* TÍTULO */
+h1 {
+  font-size: 24px;
+  font-weight: 900;      /* IMPACT */
+  letter-spacing: 0.5px;
+  margin: 10px 0 8px;
+}
+
+.description {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  opacity: 0.95;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  background: linear-gradient(180deg, #1c1c1c, #000);
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.btn:hover {
+  background: #000;
+  transform: scale(1.03);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 22px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ===============================
+   CELULAR REAL (REMOVE FRAME)
+   =============================== */
+@media (max-width: 500px) {
+  body {
+    background: #000;
+  }
+
+  .phone {
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .phone-screen {
+    border-radius: 0;
+  }
+
+  .phone-screen::before {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+  <div class="phone-screen">
+
+    <div class="container">
+
+      <div class="logo">
+        <img src="https://files.catbox.moe/qrm9ur.png" alt="Labia Extrema">
+      </div>
+
+      <h1>Labia Extrema</h1>
+
+      <div class="description">
+        🚫 Tem coisas que eu não posso falar aqui...<br>
+        por isso criei um grupo apenas para seguidores.<br>
+        👇🏽 Só Entrar No Link 👇🏽
+      </div>
+
+      <a class="btn" href="https://www.labiaextrema.com.br">
+        Conteúdos Grátis para Seguidores!
+      </a>
+
+      <div class="footer">
+        Conteúdos que ninguém te conta.
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
